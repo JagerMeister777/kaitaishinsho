@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService{
 		mapper.updateOne(userId, password, userName);
 		
 		// 例外を発生させる
-		int i = 1 / 0;
+		// int i = 1 / 0;
 	}
 
 	/** ユーザー削除（1件） */
