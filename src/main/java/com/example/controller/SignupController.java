@@ -69,4 +69,5 @@ public class SignupController {
 		// ログイン画面にリダイレクト
 		return "redirect:/login";
 	}
+	
 }
