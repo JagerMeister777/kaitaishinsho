@@ -9,133 +9,135 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>SpringBootSampleFileDownload</artifactId>
+	<artifactId>SpringBootSample2-4</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBootSampleFileDownload</name>
+	<name>SpringBootSample2-4</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-
+	
+	<!-- 依存関係ライブラリ -->
 	<dependencies>
-	    <dependency>
+		<!-- Repositoryインターフェースを活用して、データベースにアクセスできるようにする -->
+		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jdbc</artifactId>
         </dependency>
+        
+        <!-- データベース操作を容易にするモジュール -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
+        
+        <!-- ブラウザ上に動的に内容を表示させたい時に使われるテンプレートエンジン -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        
+        <!-- springbootでwebアプリ開発をする上で必要な依存関係がまとまっているライブラリ -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        
+        <!-- 実行時にファイルを編集しても自動的に再起動し、最新の状態に保ってくれるライブラリ -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+        
+        <!-- 簡単でインストール不要のRDBMSで、インメモリとファイルでデータを一時保存、永続保存ができるライブラリ -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+        
+        <!-- アノテーションでゲッターやセッターなどを自動生成してくれるライブラリ -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        
+        <!-- テストのためのライブラリ -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!-- jquery -->
+        
+        <!-- jquery bootstrapを利用するために必要なライブラリ -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
             <version>3.5.1</version>
         </dependency>
-        <!-- bootstrap -->
+        
+        <!-- bootstrap HTMLの装飾を簡単に行うためのフレームワーク -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>4.5.3</version>
         </dependency>
-        <!-- webjars-locator -->
+        
+        <!-- thymeleaf-layout-dialect Thymeleafでレイアウトを作るためのライブラリ -->
+		<dependency>
+		    <groupId>nz.net.ultraq.thymeleaf</groupId>
+		    <artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
+        
+        <!-- webjars-locator webjarsのバージョンを気にせずに記述することができる -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator</artifactId>
             <version>0.40</version>
         </dependency>
-        <!-- validator -->
+        
+        <!-- validator バリデーションを使うためのライブラリ -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
-		<!-- thymeleaf-layout-dialect -->
-		<dependency>
-		    <groupId>nz.net.ultraq.thymeleaf</groupId>
-		    <artifactId>thymeleaf-layout-dialect</artifactId>
-		</dependency>
-		<!-- MyBatis -->
+        
+        <!-- MyBatis データベース操作を簡単にSQL文を直接記述することができるフレームワーク -->
 		<dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.4</version>
         </dependency>
-        <!-- Model Mapper -->
+        
+        <!-- Model Mapper Javaオブジェクト間でフィールドを自動的にコピーするライブラリ -->
 		<dependency>
 		    <groupId>org.modelmapper.extensions</groupId>
 		    <artifactId>modelmapper-spring</artifactId>
 		    <version>2.3.9</version>
 		</dependency>
-		<!-- Spring AOP -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-aop</artifactId>
-		</dependency>
-		<!-- AspectJ -->
-		<dependency>
-		    <groupId>org.aspectj</groupId>
-		    <artifactId>aspectjweaver</artifactId>
-		</dependency>
-		<!-- SpringSecurity -->
+		
+		<!-- SpringSecurity ログイン機能の実装のために必要なライブラリ -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		
 		<!-- Thyemeleaf拡張ライブラリ（セキュリティ） -->
 		<dependency>
 		    <groupId>org.thymeleaf.extras</groupId>
 		    <artifactId>thymeleaf-extras-springsecurity5</artifactId>
 		</dependency>
-		<!-- datatables -->
+		
+		<!-- AspectJ -->
 		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>datatables</artifactId>
-		    <version>1.10.21</version>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
 		</dependency>
-		<!-- datatables-plugins -->
-		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>datatables-plugins</artifactId>
-		    <version>1.10.21</version>
-		    <scope>runtime</scope>
-		</dependency>
-		<!-- JPA -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+		
 	</dependencies>
 
 	<build>
